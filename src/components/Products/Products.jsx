@@ -33,22 +33,22 @@ export const Products = () => {
         {
         filtered(products).map((product) => {
             return(
-                <div key={product.id} className='w-1/5 m-11 border-2 border-black rounded-lg flex flex-col items-center justify-between'>
-                    <img src={product.image} alt='ImageReference' className='w-full h-40 rounded-lg'/>
+                <div key={product.id} className='w-80 m-11  rounded-lg flex flex-col items-center justify-between shadow-2xl p-2  '>
+                    <div className='w-full'>
+                        <img src={product.image} alt='ImageReference' className='w-full p-4 h-80 rounded-lg'/>
+                    </div>
                     <div className='w-full h-3/5 flex flex-col justify-between'>
                         <h2 className='text-xl'>{product.title}</h2>
                         <p>{product.category}</p>
-                        <p>{product.price}</p>
+                        <p>${product.price}</p>
                     </div>
-                    <button onClick={() => addToCart(product)} className='w-4/5 m-6 bg-fuchsia-950 text-white hover:bg-black'>Add to Cart</button>
-                <div>
-                    {
-                        JSON.stringify(cart, null, 2)
-                    }
-                </div>
+                    <button onClick={() => addToCart(product)} className='w-4/5 m-6 p-2 border-double border-4 bg-black text-white hover:bg-black'>Add to Cart</button>
                 </div>
             );
         })}
     </>
   )
 }
+
+
+// hover:-translate-y-4 duration-200
